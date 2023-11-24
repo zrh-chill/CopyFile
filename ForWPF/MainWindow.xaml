@@ -1,0 +1,33 @@
+﻿<Window x:Class="ForWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ForWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" AllowDrop="True" Drop="Window_Drop" DragEnter="Window_DragEnter">
+    <Grid x:Name="GridMain" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+            Background="Beige"
+            AllowDrop="True"
+            DragOver="StackPanel_DragOver"
+            Drop="StackPanel_Drop" >
+            <Button Name="CommandTestBtn" Content="命令绑定测试" Click="CommandTestBtn_Click"/>
+            <Button Name="EventTestBtn" Content="事件绑定测试" Click="EventTestBtn_Click"/>
+            <TextBox Name="Tb" Width="Auto" Margin="2"
+             Text="green"/>
+            <local:Circle Margin="2" />
+            <local:Circle Margin="2" />
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    AllowDrop="True"
+                    DragOver="StackPanel_DragOver"
+                    Drop="StackPanel_Drop"
+            Background="Bisque">
+        </StackPanel>
+    </Grid>
+</Window>

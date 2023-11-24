@@ -1,0 +1,32 @@
+﻿<hc:BlurWindow x:Class="DataGridTest.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:DataGridTest"
+        xmlns:Controls="clr-namespace:DataGridTest.Controls"
+        DataContext="{Binding W1,Source={StaticResource Locator}}"
+         Style="{StaticResource WindowBlur}"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="新增列" Command="{Binding AddColumnCmd}" Margin="5"/>
+            <Button Content="删除列" Command="{Binding DeleteColumnCmd}" Margin="5"/>
+            <Button Content="新增数据" Command="{Binding AddDataCmd}" Margin="5"/>
+        </StackPanel>
+        <!-- 自定义的DataGrid，使用到了一个依赖属性DataSource -->
+        <Controls:DyDataGrid HeadersVisibility="All" RowHeaderWidth="60" Grid.Row="1" MinColumnWidth="10"  DataSource="{Binding DyDGrid,Source={StaticResource Locator}}" SelectionUnit="CellOrRowHeader" SelectionMode="Extended"/>
+        
+    </Grid>
+</hc:BlurWindow>

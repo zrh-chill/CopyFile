@@ -1,0 +1,45 @@
+﻿<Window x:Class="PrismSample.Views.CommandBindingView" Name="window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrismSample.Views"
+        xmlns:prism="http://prismlibrary.com/" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="CommandBindingView" Height="600" Width="450"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        >
+    <StackPanel>
+        <TextBox Margin="10" Text="{Binding CurrentTime}" FontSize="32"/>
+        <!--简单无参命令绑定-->
+        <Button Name="MyBtn" FontSize="30" Content="Click Me Simple" Margin="10" Height="60" Command="{Binding GetCurrentTimeCommand}"/>
+        <!--简单带参命令绑定-->
+        <Button Name="MyBtnParam" FontSize="30" Content="Click Me Param" Margin="10" Height="60" Command="{Binding GetCurrentTimeParamCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
+        <!--Foo双向绑定-->
+        <!--事件转命令传递自定义参数-->
+        <TextBox Margin="10" FontSize="32" Text="{Binding Foo, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <i:InvokeCommandAction Command="{Binding TextChangedCommand}" CommandParameter="{Binding ElementName=MyBtn}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <!--Foo双向绑定-->
+        <!--事件转命令并传递事件参数-->
+        <TextBox Margin="10" FontSize="32" Text="{Binding Foo, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <prism:InvokeCommandAction Command="{Binding TextChangedCommandArg}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <!--异步命令-->
+        <Button Margin="10" Content="async" FontSize="32" Height="60" Command="{Binding AsyncCommand}"/>
+        <!--用CheckBox决定命令是否能运行-->
+        <Viewbox Height="80">
+            <CheckBox IsChecked="{Binding CanExcute}" Content="CanExcute" Margin="10" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Viewbox>
+    </StackPanel>
+</Window>
