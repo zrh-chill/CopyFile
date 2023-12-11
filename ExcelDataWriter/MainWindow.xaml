@@ -1,0 +1,68 @@
+﻿<Window x:Class="ExcelDataWriter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
+        xmlns:core="clr-namespace:Panuon.WPF;assembly=Panuon.WPF"
+        xmlns:local="clr-namespace:ExcelDataWriter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="200" 
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI;component/Styles/Button.xaml" /-->
+                <ResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI;component/Styles/Button.xaml" />
+
+                <!--<ResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI;component/TextBoxStyle.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI;component/Control.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style x:Key="SignInButtonStyle"
+               TargetType="Button"
+               BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="pu:ButtonHelper.CornerRadius"
+                    Value="5" />
+                <Setter Property="Background"
+                    Value="#6CBCEA" />
+                <Setter Property="Foreground"
+                    Value="White" />
+                <Setter Property="Height"
+                    Value="35" />
+                <Setter Property="pu:ButtonHelper.PendingSpinStyle">
+                    <Setter.Value>
+                        <Style TargetType="pu:Spin"
+                           BasedOn="{StaticResource {x:Static pu:ButtonHelper.PendingSpinStyleKey}}">
+                            <Setter Property="SpinStyle"
+                                Value="Ring2" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="pu:ButtonHelper.IsPending"
+                         Value="True">
+                        <Setter Property="pu:ButtonHelper.ClickEffect"
+                            Value="Shake" />
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock Text="Click again ?" />
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+        </StackPanel.Resources>
+        <Button Margin="10" Content="选择Excel" FontSize="24" Click="Button_Click" BorderBrush="Salmon" BorderThickness="2" Background="White" FontFamily="consolas" pu:ButtonHelper.CornerRadius="5">
+        </Button>
+        <Button x:Name="tBtn" Margin="10" Content="点我" Click="tBtn_Click" Style="{StaticResource SignInButtonStyle}">
+
+        </Button>
+    </StackPanel>
+</Window>

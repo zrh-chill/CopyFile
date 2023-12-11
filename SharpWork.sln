@@ -55,6 +55,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoCAD", "AutoCAD", "{78CB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FtpFile", "FtpFile\FtpFile.csproj", "{A1B47BA1-63C8-47DF-9BE3-52DA21C0159A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelDataWriter", "ExcelDataWriter\ExcelDataWriter.csproj", "{6533D595-FBAC-4DA0-B3ED-7B8950E31A62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,10 @@ Global
 		{A1B47BA1-63C8-47DF-9BE3-52DA21C0159A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1B47BA1-63C8-47DF-9BE3-52DA21C0159A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B47BA1-63C8-47DF-9BE3-52DA21C0159A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6533D595-FBAC-4DA0-B3ED-7B8950E31A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6533D595-FBAC-4DA0-B3ED-7B8950E31A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6533D595-FBAC-4DA0-B3ED-7B8950E31A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6533D595-FBAC-4DA0-B3ED-7B8950E31A62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
