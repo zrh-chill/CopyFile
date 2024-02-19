@@ -18,6 +18,8 @@
             Drop="StackPanel_Drop" >
             <Button Name="CommandTestBtn" Content="命令绑定测试" Click="CommandTestBtn_Click"/>
             <Button Name="EventTestBtn" Content="事件绑定测试" Click="EventTestBtn_Click"/>
+            <Button Name="PanuonBtn" Content="Panuon测试" Click="PanuonBtn_Click"/>
+            <Button Name="DgBtn" Content="datagrid测试" Click="DgBtn_Click"/>
             <TextBox Name="Tb" Width="Auto" Margin="2"
              Text="green"/>
             <local:Circle Margin="2" />

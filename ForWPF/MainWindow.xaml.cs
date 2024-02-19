@@ -119,5 +119,22 @@ namespace ForWPF
             EventTestWindow window = new EventTestWindow(); ;
             window.Show();
         }
+
+        private void PanuonBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PanuonWindow panuonWindow = new PanuonWindow();
+            panuonWindow.Show();
+        }
+
+        private void DgBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int total = 654 * 4;
+            int localTally = 2600;
+
+            var newPercentage = Convert.ToInt32((double)localTally / total * 100.0);
+
+            DataGridWindow dataGridWindow = new DataGridWindow();
+            dataGridWindow.Show();
+        }
     }
 }

@@ -64,7 +64,16 @@ namespace MoveFileForm
             {
                 var directory = item.ToString();
                 var dirName = Path.GetFileName(directory) + ".prj";
-                var figureName = Path.Combine(directory, dirName, "Result", "Figure");
+                var result = Path.Combine(directory, dirName, "Result");
+                if(!Directory.Exists(result))
+                {
+                    continue;
+                }
+                var figureName = Path.Combine(result, "Figure");
+                if (!Directory.Exists(figureName))
+                {
+                    continue;
+                }
                 createDir.Go(figureName, (m, c) =>
                 {
                     ErrorBox.Items.Add(m, c);

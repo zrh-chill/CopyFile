@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExcelDataWriter.Properties
+namespace HelixToolKitApp.Properties
 {
 
 

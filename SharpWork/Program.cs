@@ -10,6 +10,8 @@ namespace SharpWork
     {
         static void Main(string[] args)
         {
+            LinkqAsync linkqAsync = new LinkqAsync();
+            linkqAsync.Work();
         }
     }
 }
