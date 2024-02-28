@@ -14,11 +14,11 @@ namespace FtpFile
         public void Initialize()
         {
             var ed = Application.DocumentManager.MdiActiveDocument.Editor;
-            ed.WriteMessage("111");
+            ed.WriteMessage("Initialize");
         }
 
-        [CommandMethod("Login")]
-        public void Login()
+        [CommandMethod("Download")]
+        public void Download()
         {
             FtpHelper ftpHelper = new FtpHelper();
             ftpHelper.GetFtpFiles("192.168.102.103", "cm", "123");
@@ -26,7 +26,8 @@ namespace FtpFile
 
         public void Terminate()
         {
-            
+            var ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            ed.WriteMessage("Terminate");
         }
     }
 }
